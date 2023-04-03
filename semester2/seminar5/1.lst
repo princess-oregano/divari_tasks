@@ -1,0 +1,22 @@
+     1                                          global _start
+     2                                          section  .text
+     3                                  
+     4                                  _start: mov      rax, 0x02000004
+     4          ******************       error: instruction not supported in 32-bit mode
+     5                                          mov      rdi, 1
+     5          ******************       error: instruction not supported in 32-bit mode
+     6                                          mov      rsi, msg
+     6          ******************       error: instruction not supported in 32-bit mode
+     7                                          mov      rdx, 13
+     7          ******************       error: instruction not supported in 32-bit mode
+     8 00000000 0F05                            syscall
+     9                                          mov      rax, 0x02000001
+     9          ******************       error: instruction not supported in 32-bit mode
+    10                                          xor      rdi, rdi
+    10          ******************       error: instruction not supported in 32-bit mode
+    11 00000002 0F05                            syscall
+    12                                  
+    13                                          section  .data
+    14 00000000 48656C6C6F20776F72-     msg:    db       "Hello world!", 10
+    14 00000009 6C64210A           
+    15                                  
